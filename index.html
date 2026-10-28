@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Autoconstrucción · Tablero informe</title>
+<title>Autoconstrucción · Tablero para compartir</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
@@ -206,7 +206,8 @@ let TAB="presentacion";
 let WMODE=false; // false = datos crudos · true = ponderado por estrato macro
 function modeLbl(){return WMODE?"ponderado por estrato":"crudo (sin ponderar)";}
 let QMODE=false; // false = año a año · true = agrupado por quinquenios
-const TABS=[["presentacion","Presentación"],["deficit","Déficit habitacional"],["terreno","Terreno"],["tenencia","Tenencia"],["progresividad","Progresividad"],["pago","Capacidad de pago"]];
+// NOTA: tablero para compartir — se removió la pestaña "Déficit habitacional" (ver NOTAS-tablero.md).
+const TABS=[["presentacion","Presentación"],["terreno","Terreno"],["tenencia","Tenencia"],["progresividad","Progresividad"],["pago","Capacidad de pago"]];
 
 function active(){return ALL.filter(r=>F.estrato.has(r.estrato)&&F.tipo.has(r.tipo)&&F.origen.has(r.origen)&&F.antig.has(r.antig)&&F.tam.has(r.tam)&&(F.partido==="__all__"||r.partido===F.partido));}
 function pct(n,d){return d>0?Math.round(n/d*1000)/10:0;}
